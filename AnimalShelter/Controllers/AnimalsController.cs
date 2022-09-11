@@ -22,12 +22,24 @@ namespace AnimalShelter.Controllers
 
     // GET: api/Animals
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Animal>>> Get()
+    public async Task<ActionResult<IEnumerable<Animal>>> Get(string species, string name)
     {
-      return await _db.Animals.ToListAsync();
+      var query = _db.Animals.AsQueryable();
+
+      if (species != null)
+      {
+        query = query.Where(entry => entry.Species == species);
+      }   
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }      
+
+      return await query.ToListAsync();
     }
 
-    // GET: api/Animals/5
+    // GET: api/Animals/1
     [HttpGet("{id}")]
     public async Task<ActionResult<Animal>> GetAnimal(int id)
     {
@@ -41,7 +53,7 @@ namespace AnimalShelter.Controllers
         return animal;
     }
 
-    // PUT: api/Animals/5
+    // PUT: api/Animals/1
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Animal animal)
