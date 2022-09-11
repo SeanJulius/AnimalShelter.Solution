@@ -30,12 +30,12 @@
 {
   "ConnectionStrings":
   {
-    "DefaultConnection": "Server=localhost;Port=3306;database={first_last};uid=animal_shelter;pwd={YOUR_PASSWORD};"
+    "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter;uid=root;pwd={YOUR_PASSWORD};"
   }
 }
 ```
-Be sure to replace `{first_last}`  and `{YOUR_PASSWORD}` with the appropriate terms.
-- for `{first_last}`, this refers to the database or schema
+Be sure to replace  `{YOUR_PASSWORD}` with the appropriate terms.
+- for `{animal_shelter}`, this refers to the database or schema
   - make sure to replace this input with what you decide to name the schema/database
 - for `{YOUR_PASSWORD}`, this refers to your password for MySQL
 
