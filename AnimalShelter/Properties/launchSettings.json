@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "CretaceousClient": {
+    "AnimalShelter.Solution": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
